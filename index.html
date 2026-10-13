@@ -77,18 +77,86 @@ footer{background:#25204b}
 @media(max-width:800px){.go-launcher{padding:17px!important;border-radius:23px!important}.go-launcher-head b{font-size:19px}.go-service{padding:13px 12px}.go-service-icon{width:43px;height:43px;margin-bottom:9px}}
 @media(prefers-reduced-motion:reduce){.go-service{animation:none;transition:none}}
  .nav-cabinet{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap;border:1px solid #e2e7f2;border-radius:11px;padding:10px 12px;color:var(--ink);font-size:13px;font-weight:800;background:#fff}.nav-cabinet:hover{border-color:#cbd5ff;background:#f7f8ff}@media(max-width:520px){.nav-cabinet{padding:9px 10px;font-size:12px}}
+
+/* Taxi-like dispatch concept: XizmatGo forest + lime */
+:root{--forest:#14201e;--forest-2:#1e302b;--lime:#c8f135;--lime-dark:#a9d321;--ink:#1d2925;--muted:#68746e;--line:#e5ebe5;--bg:#f7f8f4}
+body{background:#fbfcf8;color:var(--ink)}
+.top{background:#14201e;color:#dce6dd}
+.header{border-bottom-color:#e5ebe5;box-shadow:0 4px 22px #14201e08}
+.brand{color:#14201e}
+.logo{background:#c8f135;color:#14201e;border-radius:12px}
+.btn{background:#c8f135;color:#14201e;box-shadow:none;border-radius:13px}
+.btn:hover{background:#d7ff50;box-shadow:0 8px 20px #a9d32130}
+.btn.secondary{background:#edf5d8;color:#26351b}
+.nav-cabinet{border-color:#e1e8de;color:#24322b}
+.hero{background:radial-gradient(ellipse at 78% 12%,#314b40 0,transparent 37%),linear-gradient(115deg,#14201e,#1b2b26);padding:68px 0 62px}
+.hero h1{font-size:clamp(38px,5.1vw,61px);letter-spacing:-2px;line-height:1.04}
+.hero h1 span{color:#c8f135}
+.hero p{color:#d0dad2;max-width:590px}
+.eyebrow{background:#ffffff10;border-color:#ffffff28;color:#e4efdf}
+.hero-live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c8f135;margin-right:7px;box-shadow:0 0 0 4px #c8f13520}
+.searchbox{border-radius:16px;padding:7px;box-shadow:0 16px 40px #0002}
+.searchbox input{padding:14px}
+.searchbox .btn{white-space:nowrap}
+.hero-note{color:#aebdb3!important;font-size:12px!important}
+.go-phone{max-width:420px;justify-self:center;width:100%;padding:17px!important;border:5px solid #0c1714!important;border-radius:35px!important;box-shadow:0 25px 70px #0005!important;transform:rotate(1deg)!important;position:relative}
+.go-phone-top{height:25px;display:flex;align-items:center;justify-content:space-between;padding:0 5px 10px}
+.go-phone-camera{width:64px;height:14px;border-radius:99px;background:#14201e;position:absolute;top:8px;left:50%;transform:translateX(-50%)}
+.go-city{background:#f2f5ec;border-color:#e6ecdf;color:#4c5a4f;font-size:11px;padding:7px 9px}
+.go-map{height:190px;border-radius:19px;position:relative;overflow:hidden;background-color:#e8eee0;background-image:linear-gradient(28deg,transparent 47%,#fff 48%,#fff 52%,transparent 53%),linear-gradient(115deg,transparent 44%,#fff 45%,#fff 49%,transparent 50%),linear-gradient(0deg,#dbe6d1 1px,transparent 1px),linear-gradient(90deg,#dbe6d1 1px,transparent 1px);background-size:100% 100%,100% 100%,34px 34px,34px 34px}
+.go-map:before,.go-map:after{content:"";position:absolute;background:#d2e0c8;border-radius:18px;transform:rotate(-22deg)}
+.go-map:before{width:70px;height:180px;left:23px;top:12px}.go-map:after{width:150px;height:48px;right:-10px;bottom:18px;transform:rotate(18deg)}
+.go-map-road{position:absolute;background:#fff;border:1px solid #dbe4d5;z-index:1;border-radius:20px}
+.go-road-one{width:120%;height:13px;left:-10%;top:52%;transform:rotate(-20deg)}
+.go-road-two{width:14px;height:130%;left:60%;top:-15%;transform:rotate(18deg)}
+.go-road-three{width:80%;height:10px;left:20%;top:22%;transform:rotate(36deg)}
+.go-map-label{position:absolute;z-index:3;left:17px;top:18px;background:#fff;border-radius:9px;padding:7px 9px;font-size:10px;font-weight:800;box-shadow:0 3px 10px #14201e15}
+.go-map-pin{position:absolute;z-index:3;display:grid;place-items:center;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);width:34px;height:34px;box-shadow:0 4px 10px #14201e20}
+.go-map-pin: first-letter{transform:rotate(45deg)}
+.go-pin-home{left:26%;top:57%;background:#14201e;color:#c8f135;font-size:19px}
+.go-pin-master{right:19%;top:26%;background:#c8f135;font-size:17px}
+.go-map-route{position:absolute;z-index:2;width:110px;height:63px;border:3px dashed #79934b;border-color:#79934b transparent transparent #79934b;border-radius:55% 0 0 0;left:34%;top:37%;transform:rotate(10deg)}
+.go-dispatch-status{display:flex;align-items:center;gap:11px;padding:15px 4px 12px}
+.go-status-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:#edf7d6;color:#3f5a17;font-weight:900}
+.go-dispatch-status b{display:block;font-size:14px}
+.go-dispatch-status small{display:block;color:#69756c;font-size:11px;line-height:1.4;margin-top:4px}
+.go-phone-services{border-top:1px solid #edf0e8;padding-top:13px}
+.go-phone-services>span{display:block;font-size:12px;font-weight:850;margin-bottom:10px}
+.go-phone .go-service-grid{gap:8px}
+.go-phone .go-service{border-radius:14px;padding:10px;align-items:center;flex-direction:row;gap:8px;background:#fbfcf8;border-color:#edf0e8}
+.go-phone .go-service-icon{width:34px;height:34px;font-size:17px;margin:0;flex-shrink:0;border-radius:11px}
+.go-phone .go-service b{font-size:11px}
+.go-phone .go-launcher-foot{font-size:10px;margin-top:12px;padding-top:11px}
+.go-phone .go-launcher-foot a{color:#5a751a}
+.section{background:#fbfcf8}
+.cat{border-color:#e7ece4;box-shadow:0 7px 24px #14201e08}
+.cat:hover{border-color:#c8e77b;box-shadow:0 14px 30px #718c3615}
+.cat-icon{background:#eff6df}
+.how{background:#f2f5ee}
+.step{border-color:#e2e9dd;background:#fff}
+.num{background:#edf7d6;color:#415a1c}
+.catalog-panel{background:linear-gradient(125deg,#fff 0%,#f5f8ee 60%,#edf3de 100%);border-color:#e3eadb}
+.catalog-mark{background:#eff7db;color:#526b1d;box-shadow:none}
+.catalog-points span{border-color:#e3eadb;color:#40503f}
+.catalog-panel .btn{background:#c8f135;color:#14201e}
+.cta{background:linear-gradient(110deg,#eff6dd,#f7f8f3);border-color:#e0e9d3}
+footer{background:#14201e}
+@media(max-width:800px){.hero{padding:47px 0 40px}.hero-grid{gap:30px}.go-phone{max-width:390px}.hero-card{display:block}.searchbox input{flex-basis:100%}.searchbox .btn{width:100%}.hero h1{font-size:clamp(36px,9vw,49px)}}
+@media(max-width:420px){.go-phone{padding:13px!important;border-width:4px!important;border-radius:30px!important}.go-map{height:165px}.go-phone .go-service{padding:8px 7px;gap:6px}.go-phone .go-service b{font-size:10px}.go-phone .go-service-icon{width:30px;height:30px}.hero h1{letter-spacing:-1.4px}}
 </style></head><body>
 <div class="top"><div class="wrap"><span>Помогаем находить специалистов рядом</span><span>Ташкент · Узбекистан</span></div></div>
 <header class="header"><div class="wrap nav"><a class="brand" href="#"><span class="logo">X</span>XizmatGo</a><nav class="navlinks"><a href="#categories">Услуги</a><a href="#how">Как это работает</a><a href="#masters">Специалистам</a></nav><div style="display:flex;gap:9px;align-items:center"><a class="nav-cabinet" href="./customer.html">Мои заказы</a><button class="btn" id="openRequest">Оставить заявку</button></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">● Сервис услуг нового поколения</span><h1>Найдите своего <span>специалиста</span></h1><p>Ремонт, уборка, красота и другие услуги — ищите мастеров и отправляйте заявку без лишних сложностей.</p><div class="searchbox"><input id="search" placeholder="Например, сантехник или уборка"><button class="btn" id="searchBtn">Найти услугу →</button></div><p class="hero-note">Пока запускаемся в Ташкенте. Каталог будет расширяться.</p></div><div class="hero-card go-launcher">
-<div class="go-launcher-head"><div><span class="go-kicker">БЫСТРЫЙ СТАРТ</span><b>Что нужно сделать?</b></div><span class="go-city">📍 Ташкент</span></div>
-<div class="go-service-grid">
-<button class="go-service" type="button" data-category="Сантехника"><span class="go-service-icon go-orange">🔧</span><b>Сантехника</b><small>Краны, трубы</small></button>
-<button class="go-service" type="button" data-category="Электрика"><span class="go-service-icon go-yellow">⚡</span><b>Электрика</b><small>Свет, проводка</small></button>
-<button class="go-service" type="button" data-category="Ремонт и строительство"><span class="go-service-icon go-purple">🛠️</span><b>Ремонт</b><small>Дом и квартира</small></button>
-<button class="go-service" type="button" data-category="Уборка"><span class="go-service-icon go-green">🧹</span><b>Уборка</b><small>Дом и офис</small></button>
-</div>
-<div class="go-launcher-foot"><span>Нужно что-то другое?</span><a href="#categories">Все услуги <span aria-hidden="true">→</span></a></div>
+<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow"><span class="hero-live-dot"></span> XizmatGo · услуги рядом</span><h1>Мастер для дома — <span>в пару касаний</span></h1><p>Как вызвать такси: укажите, что нужно сделать, оставьте заявку и получите отклики специалистов. Вы выбираете мастера и заранее обсуждаете стоимость.</p><div class="searchbox"><input id="search" placeholder="Что нужно сделать? Например, починить кран"><button class="btn" id="searchBtn">Вызвать мастера <span aria-hidden="true">→</span></button></div><p class="hero-note">Начинаем с Ташкента. Время приезда и стоимость согласовываются с выбранным специалистом.</p></div><div class="hero-card go-launcher go-phone">
+<div class="go-phone-top"><span class="go-phone-camera"></span><span class="go-city">📍 Ташкент</span></div>
+<div class="go-map" aria-label="Иллюстративная карта поиска мастера"><div class="go-map-road go-road-one"></div><div class="go-map-road go-road-two"></div><div class="go-map-road go-road-three"></div><span class="go-map-label">Ваш адрес</span><span class="go-map-pin go-pin-home">⌂</span><span class="go-map-pin go-pin-master">🔧</span><span class="go-map-route"></span></div>
+<div class="go-dispatch-status"><span class="go-status-icon">✓</span><div><b>Вызов мастера</b><small>Оставьте заявку и получите предложения</small></div></div>
+<div class="go-phone-services"><span>Выберите услугу</span><div class="go-service-grid">
+<button class="go-service" type="button" data-category="Сантехника"><span class="go-service-icon go-orange">🔧</span><b>Сантехника</b></button>
+<button class="go-service" type="button" data-category="Электрика"><span class="go-service-icon go-yellow">⚡</span><b>Электрика</b></button>
+<button class="go-service" type="button" data-category="Ремонт и строительство"><span class="go-service-icon go-purple">🛠️</span><b>Ремонт</b></button>
+<button class="go-service" type="button" data-category="Уборка"><span class="go-service-icon go-green">🧹</span><b>Уборка</b></button>
+</div></div>
+<div class="go-launcher-foot"><span>Другие услуги доступны в каталоге</span><a href="#categories">Все услуги →</a></div>
 </div></div></section>
 <section class="section" id="categories"><div class="wrap"><div class="section-head"><div><h2>Какая услуга вам нужна?</h2><p class="sub">Выберите категорию или найдите услугу через поиск.</p></div></div><div class="categories" id="categoryGrid"></div></div></section>
 <section class="section" id="specialists"><div class="wrap"><div class="section-head"><div><h2>Каталог специалистов</h2><p class="sub">Публикуем анкеты по мере проверки заявок.</p></div></div><div class="catalog-panel"><div><div class="catalog-mark">✦</div><h3>Подключаем первых мастеров в Ташкенте</h3><p>Мы не показываем выдуманные рейтинги и цены. Когда появятся проверенные анкеты специалистов, здесь будут фотографии, специализация, стоимость услуг и отзывы.</p><div class="catalog-points"><span>✓ Проверка анкет</span><span>★ Реальные отзывы</span><span>₸ Прозрачные цены</span></div><p class="catalog-note">Пока каталог наполняется, оставьте заявку — команда XizmatGo сможет связаться с вами по указанному номеру.</p></div><div><button class="btn" id="catalogRequest">Оставить заявку →</button><p class="catalog-note">Вы специалист? <a href="#masters" style="color:#e9574d;font-weight:800">Подать анкету</a></p></div></div></div></section>

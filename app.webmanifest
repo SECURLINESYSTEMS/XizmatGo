@@ -1,0 +1,17 @@
+{
+  "id": "./app.html",
+  "name": "XizmatGo — приложение для вызова мастеров",
+  "short_name": "XizmatGo",
+  "description": "Приложение для заказа бытовых услуг и работы специалистов в Узбекистане.",
+  "lang": "ru",
+  "start_url": "./app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f6f2",
+  "theme_color": "#14201e",
+  "categories": ["lifestyle", "utilities"],
+  "icons": [
+    {"src": "./public/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}

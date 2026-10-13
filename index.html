@@ -1,192 +1,62 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14201e"><meta name="description" content="XizmatGo — найдите проверенного специалиста для дома, бизнеса и повседневных задач."><title>XizmatGo — Найдите своего специалиста</title><link rel="icon" href="public/favicon.svg"><style>
-:root{--navy:#101a35;--blue:#315efb;--cyan:#39d7e8;--ink:#17213b;--muted:#66718a;--line:#e7ebf3;--bg:#f6f8fc;--white:#fff}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}.top{background:var(--navy);color:#dbe5ff;font-size:13px;padding:9px 0}.top .wrap{display:flex;justify-content:space-between;gap:12px}.header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:900;font-size:24px;letter-spacing:-1px}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),#6d50ef);color:white;display:grid;place-items:center;font-weight:900}.navlinks{display:flex;gap:24px;align-items:center}.navlinks a{color:#47516a;text-decoration:none;font-size:14px;font-weight:650}.btn{border:0;border-radius:12px;padding:12px 17px;background:var(--blue);color:#fff;font-weight:750;box-shadow:0 6px 18px #315efb25}.btn.secondary{background:#eef2ff;color:var(--blue);box-shadow:none}.hero{background:radial-gradient(ellipse at 80% 0%,#243c79 0,transparent 45%),linear-gradient(115deg,#101a35,#182b55);color:white;padding:70px 0 58px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:99px;background:#ffffff12;border:1px solid #ffffff25;color:#c7f7ff;font-size:13px;font-weight:700}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.05;letter-spacing:-2px;margin:20px 0}.hero h1 span{color:var(--cyan)}.hero p{color:#c7d2ed;line-height:1.7;font-size:17px;max-width:580px}.searchbox{display:flex;background:white;padding:7px;border-radius:16px;gap:8px;margin-top:26px;box-shadow:0 15px 40px #0002}.searchbox input{min-width:0;flex:1;border:0;outline:0;padding:12px;color:var(--ink)}.hero-note{font-size:12px!important;color:#9daed2!important;margin-top:12px}.hero-card{background:#ffffff10;border:1px solid #ffffff22;border-radius:26px;padding:22px;backdrop-filter:blur(10px)}.hero-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.online{font-size:12px;color:#aaf5dc}.mini-pro{display:flex;align-items:center;gap:12px;background:#ffffff0c;border:1px solid #ffffff17;padding:13px;border-radius:16px;margin-top:10px}.avatar{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#dce6ff;color:#2346b5;font-weight:900;font-size:17px;flex-shrink:0}.mini-pro small{display:block;color:#c0cbe4;margin-top:4px}.rating{margin-left:auto;color:#ffe08a;font-size:13px;white-space:nowrap}.section{padding:58px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:24px}.section h2{font-size:clamp(25px,3vw,34px);letter-spacing:-1px;margin:0 0 8px}.sub{color:var(--muted);margin:0;line-height:1.6}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:left;transition:.18s;min-height:145px}.cat:hover{transform:translateY(-3px);border-color:#bac8ff;box-shadow:0 12px 30px #1e2f5b0b}.cat-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:15px;background:#edf1ff;font-size:24px;margin-bottom:15px}.cat b{display:block;font-size:16px}.cat small{display:block;color:var(--muted);margin-top:6px}.how{background:#fff}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:24px;border:1px solid var(--line);border-radius:18px}.num{width:36px;height:36px;border-radius:12px;background:#eaf0ff;color:var(--blue);display:grid;place-items:center;font-weight:900;margin-bottom:18px}.step h3{margin:0 0 8px}.step p{color:var(--muted);line-height:1.65;margin:0}.cta{background:linear-gradient(110deg,#e9f0ff,#eafcff);border:1px solid #dbe6ff;border-radius:24px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0 0 8px}.cta p{margin:0;color:var(--muted)}footer{background:#101a35;color:#dce4f7;padding:36px 0;margin-top:40px}.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.foot p{color:#aab7d5;max-width:480px;line-height:1.6}.foot a{color:#dce4f7;text-decoration:none;margin-right:16px;font-size:14px}.modal{position:fixed;inset:0;background:#071127a8;display:none;place-items:center;padding:18px;z-index:20}.modal.open{display:grid}.dialog{background:white;border-radius:22px;width:min(520px,100%);max-height:90vh;overflow:auto;padding:25px;box-shadow:0 25px 90px #0004}.dialog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.dialog h2{margin:0}.close{border:0;background:#f0f3f9;border-radius:10px;width:36px;height:36px;font-size:22px}.field{display:grid;gap:7px;margin:13px 0}.field label{font-size:13px;font-weight:750;color:#3e4963}.field input,.field select,.field textarea{width:100%;border:1px solid #dce2ed;border-radius:11px;padding:12px;outline-color:var(--blue);background:#fff}.field textarea{min-height:90px;resize:vertical}.notice{font-size:12px;color:var(--muted);line-height:1.5}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#101a35;color:#fff;padding:13px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:30;max-width:calc(100% - 30px)}.toast.show{opacity:1;transform:translate(-50%,0)}.empty{padding:22px;color:var(--muted);background:white;border:1px dashed #ccd5e6;border-radius:16px;grid-column:1/-1}
-@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-card{display:none}.categories{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.steps{grid-template-columns:1fr}.hero{padding:52px 0}.searchbox{flex-wrap:wrap}.searchbox input{flex-basis:100%}.searchbox .btn{width:100%}.section{padding:42px 0}.cta{align-items:flex-start;flex-direction:column}.top .wrap span:last-child{display:none}}@media(max-width:420px){.wrap{width:calc(100% - 24px)}.categories{gap:9px}.cat{padding:14px;min-height:132px}.brand{font-size:21px}.nav{height:66px}.hero h1{letter-spacing:-1.3px}}
-
-/* XizmatGo bright marketplace refresh */
-:root{--navy:#20204a;--blue:#5b35f5;--cyan:#ffcf5a;--ink:#252448;--muted:#77758f;--line:#ece8f6;--bg:#fff9f5;--white:#fff}
-body{background:#fffaf6;color:var(--ink)}
-.top{background:#25204b;color:#f7f3ff}
-.header{box-shadow:0 5px 24px #39205b0b}
-.logo{background:linear-gradient(135deg,#ff8a34,#f33f86);border-radius:14px}
-.btn{background:linear-gradient(100deg,#ff6d3b,#f33f86);box-shadow:0 8px 20px #f34b672b;border-radius:13px;transition:transform .18s,box-shadow .18s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px #f34b6740}
-.btn.secondary{background:#fff0e8;color:#ef5a47}
-.hero{background:radial-gradient(ellipse at 78% 20%,#7654ff 0,transparent 38%),radial-gradient(ellipse at 5% 100%,#ff7e4c 0,transparent 40%),linear-gradient(120deg,#25204b,#4730a3);padding:74px 0 68px}
-.hero h1{font-size:clamp(38px,5.2vw,62px);letter-spacing:-2.2px}
-.hero h1 span{color:#ffd15c}
-.eyebrow{background:#ffffff1c;color:#ffe3a6;border-color:#ffffff35}
-.searchbox{border-radius:18px;padding:8px;box-shadow:0 20px 45px #100a372e}
-.searchbox .btn{white-space:nowrap}
-.hero-card{background:#fff;color:#28234d;border:0;backdrop-filter:none;box-shadow:0 24px 65px #130c3c40;border-radius:26px;transform:rotate(1deg)}
-.hero-card-top{color:#28234d}
-.online{color:#168b69}
-.mini-pro{background:#fff8f4;border:1px solid #ffe4d7}
-.mini-pro small{color:#77758f}
-.avatar{background:#ffe3d5;color:#e84c52;border-radius:15px}
-.rating{color:#d58a00}
-.section{padding:64px 0}
-.section h2{letter-spacing:-1.1px}
-.categories{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.cat{padding:0 0 18px;overflow:hidden;border:1px solid #eee8f6;border-radius:21px;min-height:unset;background:#fff;box-shadow:0 8px 28px #3b23600a}
-.cat:hover{transform:translateY(-5px);border-color:#ffd0b9;box-shadow:0 18px 35px #ef6d4d19}
-.cat-photo{width:100%;height:142px;object-fit:cover;display:block;background:#f4eafa}
-.cat b,.cat small{margin-left:17px;margin-right:17px}
-.cat b{margin-top:16px;font-size:16px}
-.cat small{line-height:1.45}
-.cat-icon{width:42px;height:42px;margin:14px 0 0 17px;margin-bottom:0;border-radius:14px;background:#fff0e8;font-size:22px}
-.step{border:1px solid #f0e6f4;border-radius:20px;background:linear-gradient(145deg,#fff,#fff9f4)}
-.num{background:#fff0e8;color:#ee5d48;border-radius:13px}
-.how{background:#fff7f1}
-.cta{background:linear-gradient(110deg,#fff0e6,#f0ebff);border-color:#f8d9d1;border-radius:26px}
-.cta .btn{min-width:190px}
-footer{background:#25204b}
-@media(max-width:800px){.hero{padding:52px 0 46px}.hero-card{display:block;transform:none}.categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cat-photo{height:118px}.cat{padding-bottom:14px}.cat b,.cat small{margin-left:13px;margin-right:13px}.cat-icon{margin-left:13px}.section{padding:44px 0}.hero-card{padding:17px}.mini-pro{padding:10px}}
-@media(max-width:420px){.cat-photo{height:100px}.hero h1{font-size:37px}.searchbox{padding:7px}.hero-card-top{font-size:13px}}
-
-
-/* Specialist catalogue and conversion improvements */
-.catalog-intro{display:flex;gap:24px;align-items:center;justify-content:space-between;margin-bottom:24px}
-.catalog-panel{border:1px solid #f0e5f1;border-radius:26px;background:linear-gradient(125deg,#fff 0%,#fff5ef 52%,#f3efff 100%);padding:30px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
-.catalog-mark{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:#fff;color:#ef5b51;font-size:28px;box-shadow:0 8px 24px #ed684018;margin-bottom:16px}
-.catalog-panel h3{font-size:23px;letter-spacing:-.6px;margin:0 0 9px}
-.catalog-panel p{margin:0;color:var(--muted);line-height:1.7;max-width:650px}
-.catalog-points{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
-.catalog-points span{background:#fff;border:1px solid #f2e5ed;border-radius:99px;padding:8px 11px;font-size:12px;font-weight:700;color:#514b6b}
-.catalog-note{font-size:12px;color:var(--muted);margin-top:13px;line-height:1.55}
-@media(max-width:700px){.catalog-panel{grid-template-columns:1fr;padding:22px}.catalog-panel .btn{width:100%}.catalog-panel h3{font-size:21px}}
-
-/* XizmatGo quick-launch home inspired by service super-apps */
-.go-launcher{transform:none!important;padding:22px!important;border-radius:28px!important;background:#fff!important;box-shadow:0 24px 65px #130c3c30!important;color:var(--ink)!important}
-.go-launcher-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.go-launcher-head>div{display:grid;gap:5px}
-.go-launcher-head b{font-size:21px;letter-spacing:-.5px}
-.go-kicker{font-size:10px;font-weight:900;letter-spacing:1.2px;color:#f05c50}
-.go-city{font-size:11px;font-weight:800;color:#5d5879;background:#f7f4ff;border:1px solid #eee8ff;border-radius:99px;padding:8px 10px;white-space:nowrap}
-.go-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.go-service{display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-width:0;padding:14px 13px;border:1px solid #f0eaf5;border-radius:19px;background:linear-gradient(145deg,#fff,#fffaf7);transition:transform .18s,border-color .18s,box-shadow .18s;animation:goAppear .42s both}
-.go-service:nth-child(2){animation-delay:.05s}.go-service:nth-child(3){animation-delay:.1s}.go-service:nth-child(4){animation-delay:.15s}
-.go-service:hover,.go-service:focus-visible{transform:translateY(-3px);border-color:#ffc9b4;box-shadow:0 10px 24px #ec6d4c17;outline:none}
-.go-service-icon{display:grid;place-items:center;width:47px;height:47px;border-radius:16px;font-size:24px;margin-bottom:12px}
-.go-orange{background:#fff0e5}.go-yellow{background:#fff7d8}.go-purple{background:#f0eaff}.go-green{background:#e4f8ec}
-.go-service b{font-size:14px;line-height:1.3}.go-service small{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
-.go-launcher-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:17px;padding-top:15px;border-top:1px solid #f0ebf4;font-size:12px;color:var(--muted)}
-.go-launcher-foot a{font-weight:850;color:#ed594e;text-decoration:none;white-space:nowrap}
-.go-launcher-foot a:hover{text-decoration:underline}
-@keyframes goAppear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:800px){.go-launcher{padding:17px!important;border-radius:23px!important}.go-launcher-head b{font-size:19px}.go-service{padding:13px 12px}.go-service-icon{width:43px;height:43px;margin-bottom:9px}}
-@media(prefers-reduced-motion:reduce){.go-service{animation:none;transition:none}}
- .nav-cabinet{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap;border:1px solid #e2e7f2;border-radius:11px;padding:10px 12px;color:var(--ink);font-size:13px;font-weight:800;background:#fff}.nav-cabinet:hover{border-color:#cbd5ff;background:#f7f8ff}@media(max-width:520px){.nav-cabinet{padding:9px 10px;font-size:12px}}
-
-/* Taxi-like dispatch concept: XizmatGo forest + lime */
-:root{--forest:#14201e;--forest-2:#1e302b;--lime:#c8f135;--lime-dark:#a9d321;--ink:#1d2925;--muted:#68746e;--line:#e5ebe5;--bg:#f7f8f4}
-body{background:#fbfcf8;color:var(--ink)}
-.top{background:#14201e;color:#dce6dd}
-.header{border-bottom-color:#e5ebe5;box-shadow:0 4px 22px #14201e08}
-.brand{color:#14201e}
-.logo{background:#c8f135;color:#14201e;border-radius:12px}
-.btn{background:#c8f135;color:#14201e;box-shadow:none;border-radius:13px}
-.btn:hover{background:#d7ff50;box-shadow:0 8px 20px #a9d32130}
-.btn.secondary{background:#edf5d8;color:#26351b}
-.nav-cabinet{border-color:#e1e8de;color:#24322b}
-.hero{background:radial-gradient(ellipse at 78% 12%,#314b40 0,transparent 37%),linear-gradient(115deg,#14201e,#1b2b26);padding:68px 0 62px}
-.hero h1{font-size:clamp(38px,5.1vw,61px);letter-spacing:-2px;line-height:1.04}
-.hero h1 span{color:#c8f135}
-.hero p{color:#d0dad2;max-width:590px}
-.eyebrow{background:#ffffff10;border-color:#ffffff28;color:#e4efdf}
-.hero-live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c8f135;margin-right:7px;box-shadow:0 0 0 4px #c8f13520}
-.searchbox{border-radius:16px;padding:7px;box-shadow:0 16px 40px #0002}
-.searchbox input{padding:14px}
-.searchbox .btn{white-space:nowrap}
-.hero-note{color:#aebdb3!important;font-size:12px!important}
-.go-phone{max-width:420px;justify-self:center;width:100%;padding:17px!important;border:5px solid #0c1714!important;border-radius:35px!important;box-shadow:0 25px 70px #0005!important;transform:rotate(1deg)!important;position:relative}
-.go-phone-top{height:25px;display:flex;align-items:center;justify-content:space-between;padding:0 5px 10px}
-.go-phone-camera{width:64px;height:14px;border-radius:99px;background:#14201e;position:absolute;top:8px;left:50%;transform:translateX(-50%)}
-.go-city{background:#f2f5ec;border-color:#e6ecdf;color:#4c5a4f;font-size:11px;padding:7px 9px}
-.go-map{height:190px;border-radius:19px;position:relative;overflow:hidden;background-color:#e8eee0;background-image:linear-gradient(28deg,transparent 47%,#fff 48%,#fff 52%,transparent 53%),linear-gradient(115deg,transparent 44%,#fff 45%,#fff 49%,transparent 50%),linear-gradient(0deg,#dbe6d1 1px,transparent 1px),linear-gradient(90deg,#dbe6d1 1px,transparent 1px);background-size:100% 100%,100% 100%,34px 34px,34px 34px}
-.go-map:before,.go-map:after{content:"";position:absolute;background:#d2e0c8;border-radius:18px;transform:rotate(-22deg)}
-.go-map:before{width:70px;height:180px;left:23px;top:12px}.go-map:after{width:150px;height:48px;right:-10px;bottom:18px;transform:rotate(18deg)}
-.go-map-road{position:absolute;background:#fff;border:1px solid #dbe4d5;z-index:1;border-radius:20px}
-.go-road-one{width:120%;height:13px;left:-10%;top:52%;transform:rotate(-20deg)}
-.go-road-two{width:14px;height:130%;left:60%;top:-15%;transform:rotate(18deg)}
-.go-road-three{width:80%;height:10px;left:20%;top:22%;transform:rotate(36deg)}
-.go-map-label{position:absolute;z-index:3;left:17px;top:18px;background:#fff;border-radius:9px;padding:7px 9px;font-size:10px;font-weight:800;box-shadow:0 3px 10px #14201e15}
-.go-map-pin{position:absolute;z-index:3;display:grid;place-items:center;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);width:34px;height:34px;box-shadow:0 4px 10px #14201e20}
-.go-map-pin: first-letter{transform:rotate(45deg)}
-.go-pin-home{left:26%;top:57%;background:#14201e;color:#c8f135;font-size:19px}
-.go-pin-master{right:19%;top:26%;background:#c8f135;font-size:17px}
-.go-map-route{position:absolute;z-index:2;width:110px;height:63px;border:3px dashed #79934b;border-color:#79934b transparent transparent #79934b;border-radius:55% 0 0 0;left:34%;top:37%;transform:rotate(10deg)}
-.go-dispatch-status{display:flex;align-items:center;gap:11px;padding:15px 4px 12px}
-.go-status-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:#edf7d6;color:#3f5a17;font-weight:900}
-.go-dispatch-status b{display:block;font-size:14px}
-.go-dispatch-status small{display:block;color:#69756c;font-size:11px;line-height:1.4;margin-top:4px}
-.go-phone-services{border-top:1px solid #edf0e8;padding-top:13px}
-.go-phone-services>span{display:block;font-size:12px;font-weight:850;margin-bottom:10px}
-.go-phone .go-service-grid{gap:8px}
-.go-phone .go-service{border-radius:14px;padding:10px;align-items:center;flex-direction:row;gap:8px;background:#fbfcf8;border-color:#edf0e8}
-.go-phone .go-service-icon{width:34px;height:34px;font-size:17px;margin:0;flex-shrink:0;border-radius:11px}
-.go-phone .go-service b{font-size:11px}
-.go-phone .go-launcher-foot{font-size:10px;margin-top:12px;padding-top:11px}
-.go-phone .go-launcher-foot a{color:#5a751a}
-.section{background:#fbfcf8}
-.cat{border-color:#e7ece4;box-shadow:0 7px 24px #14201e08}
-.cat:hover{border-color:#c8e77b;box-shadow:0 14px 30px #718c3615}
-.cat-icon{background:#eff6df}
-.how{background:#f2f5ee}
-.step{border-color:#e2e9dd;background:#fff}
-.num{background:#edf7d6;color:#415a1c}
-.catalog-panel{background:linear-gradient(125deg,#fff 0%,#f5f8ee 60%,#edf3de 100%);border-color:#e3eadb}
-.catalog-mark{background:#eff7db;color:#526b1d;box-shadow:none}
-.catalog-points span{border-color:#e3eadb;color:#40503f}
-.catalog-panel .btn{background:#c8f135;color:#14201e}
-.cta{background:linear-gradient(110deg,#eff6dd,#f7f8f3);border-color:#e0e9d3}
-footer{background:#14201e}
-@media(max-width:800px){.hero{padding:47px 0 40px}.hero-grid{gap:30px}.go-phone{max-width:390px}.hero-card{display:block}.searchbox input{flex-basis:100%}.searchbox .btn{width:100%}.hero h1{font-size:clamp(36px,9vw,49px)}}
-@media(max-width:420px){.go-phone{padding:13px!important;border-width:4px!important;border-radius:30px!important}.go-map{height:165px}.go-phone .go-service{padding:8px 7px;gap:6px}.go-phone .go-service b{font-size:10px}.go-phone .go-service-icon{width:30px;height:30px}.hero h1{letter-spacing:-1.4px}}
-</style><link rel="manifest" href="./manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="XizmatGo"><meta name="theme-color" content="#14201e"><link rel="icon" href="./public/app-icon.svg" type="image/svg+xml"><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(err=>console.warn("XizmatGo offline shell unavailable",err)));}</script></head><body>
-<div class="top"><div class="wrap"><span>Помогаем находить специалистов рядом</span><span>Ташкент · Узбекистан</span></div></div>
-<header class="header"><div class="wrap nav"><a class="brand" href="#"><span class="logo">X</span>XizmatGo</a><nav class="navlinks"><a href="#categories">Услуги</a><a href="#how">Как это работает</a><a href="#masters">Специалистам</a></nav><div style="display:flex;gap:9px;align-items:center"><a class="nav-cabinet" href="./customer.html">Мои заказы</a><button class="btn" id="openRequest">Оставить заявку</button></div></div></header>
-<main><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow"><span class="hero-live-dot"></span> XizmatGo · услуги рядом</span><h1>Мастер для дома — <span>в пару касаний</span></h1><p>Как вызвать такси: укажите, что нужно сделать, оставьте заявку и получите отклики специалистов. Вы выбираете мастера и заранее обсуждаете стоимость.</p><div class="searchbox"><input id="search" placeholder="Что нужно сделать? Например, починить кран"><button class="btn" id="searchBtn">Вызвать мастера <span aria-hidden="true">→</span></button></div><p class="hero-note">Начинаем с Ташкента. Время приезда и стоимость согласовываются с выбранным специалистом.</p></div><div class="hero-card go-launcher go-phone">
-<div class="go-phone-top"><span class="go-phone-camera"></span><span class="go-city">📍 Ташкент</span></div>
-<div class="go-map" aria-label="Иллюстративная карта поиска мастера"><div class="go-map-road go-road-one"></div><div class="go-map-road go-road-two"></div><div class="go-map-road go-road-three"></div><span class="go-map-label">Ваш адрес</span><span class="go-map-pin go-pin-home">⌂</span><span class="go-map-pin go-pin-master">🔧</span><span class="go-map-route"></span></div>
-<div class="go-dispatch-status"><span class="go-status-icon">✓</span><div><b>Вызов мастера</b><small>Оставьте заявку и получите предложения</small></div></div>
-<div class="go-phone-services"><span>Выберите услугу</span><div class="go-service-grid">
-<button class="go-service" type="button" data-category="Сантехника"><span class="go-service-icon go-orange">🔧</span><b>Сантехника</b></button>
-<button class="go-service" type="button" data-category="Электрика"><span class="go-service-icon go-yellow">⚡</span><b>Электрика</b></button>
-<button class="go-service" type="button" data-category="Ремонт и строительство"><span class="go-service-icon go-purple">🛠️</span><b>Ремонт</b></button>
-<button class="go-service" type="button" data-category="Уборка"><span class="go-service-icon go-green">🧹</span><b>Уборка</b></button>
-</div></div>
-<div class="go-launcher-foot"><span>Другие услуги доступны в каталоге</span><a href="#categories">Все услуги →</a></div>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="XizmatGo — сервис поиска мастеров и бытовых услуг в Узбекистане. Выберите услугу и перейдите к оформлению заказа.">
+<title>XizmatGo — сервис услуг в Узбекистане</title>
+<link rel="icon" href="./public/app-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<style>
+:root{--ink:#17191b;--muted:#696d70;--line:#e8e9e7;--paper:#fff;--soft:#f5f6f3;--lime:#d5f45b;--green:#20312a;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.header{height:76px;border-bottom:1px solid var(--line);background:#fff;display:flex;align-items:center;position:sticky;top:0;z-index:10}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:800;letter-spacing:-1px}.logo{width:37px;height:37px;border-radius:12px;background:var(--lime);display:grid;place-items:center;font-weight:900;color:var(--green);font-size:20px}.links{display:flex;align-items:center;gap:26px;font-size:14px;color:#4b4e4c}.links a:hover{color:#000}.actions{display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;background:var(--lime);color:#172019;padding:14px 19px;font-size:14px;font-weight:750;cursor:pointer;transition:transform .15s,background .15s}.btn:hover{background:#e0ff70;transform:translateY(-1px)}.btn.ghost{background:#f0f1ed}.btn.ghost:hover{background:#e6e8e2}
+.hero{padding:70px 0 66px;background:#f6f7f3;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:54px}.kicker{font-size:13px;font-weight:750;color:#4b5b43;display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:#9dcf20}.hero h1{font-size:clamp(42px,5.5vw,68px);line-height:.99;letter-spacing:-3px;margin:20px 0 22px;max-width:650px}.hero h1 span{background:var(--lime);padding:0 7px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}.hero p{font-size:18px;line-height:1.6;color:#5c625e;max-width:560px;margin:0 0 26px}.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}.small-note{font-size:12px!important;line-height:1.5!important;margin-top:17px!important;color:#777d77!important}
+.visual{background:#e8eddf;border-radius:30px;min-height:380px;padding:22px;position:relative;overflow:hidden}.visual:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#d7e9ad;right:-90px;top:-90px}.visual:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#d8dfd0;left:-95px;bottom:-100px}.visual-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:750}.city{background:#fff;border-radius:30px;padding:9px 12px}.visual-card{position:relative;z-index:1;background:#fff;border-radius:22px;padding:22px;margin-top:24px;box-shadow:0 16px 40px #26321d13}.visual-card h3{font-size:22px;letter-spacing:-.6px;margin:0 0 7px}.visual-card p{font-size:14px;margin:0;color:#777;line-height:1.5}.service-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}.service-mini{border:1px solid #eceee8;border-radius:15px;padding:13px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:750}.emoji{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:#f2f5e9;font-size:21px;flex-shrink:0}.visual-foot{position:relative;z-index:1;margin-top:14px;background:#26382e;color:white;border-radius:15px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px}.visual-foot b{color:var(--lime)}
+.section{padding:70px 0}.section.soft{background:#fafbf8}.section-head{max-width:700px;margin-bottom:30px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#64734a;margin-bottom:12px}.section h2{font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-1.6px;margin:0 0 12px}.lead{font-size:16px;line-height:1.65;color:var(--muted);margin:0}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{border:1px solid var(--line);border-radius:20px;padding:22px;min-height:177px;transition:transform .16s,border-color .16s,background .16s}.service:hover{transform:translateY(-3px);border-color:#c6d99a;background:#fdfff7}.service .emoji{width:49px;height:49px;margin-bottom:20px}.service h3{font-size:16px;margin:0 0 7px}.service p{font-size:13px;line-height:1.5;color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{border-radius:20px;background:#fff;border:1px solid var(--line);padding:25px}.number{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:var(--lime);font-weight:850;margin-bottom:24px}.step h3{font-size:18px;margin:0 0 9px}.step p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.partner{padding:34px;border-radius:26px;background:var(--green);color:#fff;display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px}.partner h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-1.3px;margin:0 0 10px}.partner p{color:#d1d9d2;line-height:1.6;margin:0;max-width:650px}.partner .btn{white-space:nowrap}
+.footer{padding:32px 0;background:#fff;border-top:1px solid var(--line)}.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}.foot p{font-size:13px;line-height:1.6;color:var(--muted);max-width:490px}.foot-links{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:#5b605b}.foot-links a:hover{text-decoration:underline}
+@media(max-width:850px){.links{display:none}.hero{padding:48px 0}.hero-grid{grid-template-columns:1fr;gap:30px}.visual{min-height:unset}.services{grid-template-columns:repeat(2,1fr)}.section{padding:52px 0}.partner{grid-template-columns:1fr}.partner .btn{justify-self:start}}
+@media(max-width:520px){.wrap{width:calc(100% - 28px)}.header{height:66px}.brand{font-size:21px}.logo{width:34px;height:34px}.actions .ghost{display:none}.actions .btn{padding:11px 13px;font-size:12px}.hero h1{font-size:43px;letter-spacing:-2px}.hero p{font-size:16px}.hero-buttons .btn{width:100%}.visual{padding:14px;border-radius:22px}.visual-card{padding:16px;margin-top:15px}.visual-card h3{font-size:19px}.service-mini{padding:9px;font-size:12px;gap:7px}.service-mini .emoji{width:32px;height:32px;font-size:17px}.services{gap:10px}.service{padding:15px;min-height:160px}.service .emoji{margin-bottom:14px}.steps{grid-template-columns:1fr}.step{padding:20px}.number{margin-bottom:16px}.partner{padding:24px}.section h2{letter-spacing:-1px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="header"><div class="wrap nav">
+<a class="brand" href="./" aria-label="XizmatGo — главная"><span class="logo">X</span><span>XizmatGo</span></a>
+<nav class="links" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#how">Как это работает</a><a href="#specialists">Специалистам</a></nav>
+<div class="actions"><a class="btn ghost" href="./specialist.html">Я специалист</a><a class="btn" href="./customer.html">Открыть сервис ↗</a></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div>
+<div class="kicker"><span class="dot"></span> Сервис бытовых услуг в Узбекистане</div>
+<h1>Нужный мастер — <span>без лишних поисков</span></h1>
+<p>XizmatGo помогает найти специалиста для дома и повседневных задач. Выберите услугу, опишите задачу и получите отклики мастеров.</p>
+<div class="hero-buttons"><a class="btn" href="./customer.html">Перейти к заказу <span aria-hidden="true">→</span></a><a class="btn ghost" href="#services">Посмотреть услуги</a></div>
+<p class="small-note">XizmatGo помогает клиентам и специалистам связаться. Стоимость и условия работы согласовываются напрямую с выбранным мастером.</p>
+</div>
+<div class="visual" aria-label="Пример выбора услуг в XizmatGo"><div class="visual-top"><strong>Ваши бытовые задачи</strong><span class="city">📍 Ташкент</span></div>
+<div class="visual-card"><h3>Что нужно сделать?</h3><p>Выберите направление — остальное начнётся с вашей заявки.</p>
+<div class="service-mini-grid"><div class="service-mini"><span class="emoji">🔧</span>Сантехника</div><div class="service-mini"><span class="emoji">⚡</span>Электрика</div><div class="service-mini"><span class="emoji">🛠️</span>Ремонт</div><div class="service-mini"><span class="emoji">🧹</span>Уборка</div></div></div>
+<div class="visual-foot"><span>Заявка → отклики мастеров</span><b>Начать →</b></div>
 </div></div></section>
-<section class="section" id="categories"><div class="wrap"><div class="section-head"><div><h2>Какая услуга вам нужна?</h2><p class="sub">Выберите категорию или найдите услугу через поиск.</p></div></div><div class="categories" id="categoryGrid"></div></div></section>
-<section class="section" id="specialists"><div class="wrap"><div class="section-head"><div><h2>Каталог специалистов</h2><p class="sub">Публикуем анкеты по мере проверки заявок.</p></div></div><div class="catalog-panel"><div><div class="catalog-mark">✦</div><h3>Подключаем первых мастеров в Ташкенте</h3><p>Мы не показываем выдуманные рейтинги и цены. Когда появятся проверенные анкеты специалистов, здесь будут фотографии, специализация, стоимость услуг и отзывы.</p><div class="catalog-points"><span>✓ Проверка анкет</span><span>★ Реальные отзывы</span><span>₸ Прозрачные цены</span></div><p class="catalog-note">Пока каталог наполняется, оставьте заявку — команда XizmatGo сможет связаться с вами по указанному номеру.</p></div><div><button class="btn" id="catalogRequest">Оставить заявку →</button><p class="catalog-note">Вы специалист? <a href="#masters" style="color:#e9574d;font-weight:800">Подать анкету</a></p></div></div></div></section>
-<section class="section how" id="how"><div class="wrap"><div class="section-head"><div><h2>Просто начать</h2><p class="sub">Три понятных шага — от задачи до специалиста.</p></div></div><div class="steps"><article class="step"><div class="num">1</div><h3>Выберите услугу</h3><p>Найдите нужную категорию и опишите задачу, которую хотите решить.</p></article><article class="step"><div class="num">2</div><h3>Оставьте заявку</h3><p>Укажите контактный номер и удобное время для связи.</p></article><article class="step"><div class="num">3</div><h3>Обсудите детали</h3><p>Согласуйте с мастером стоимость, сроки и условия выполнения работы.</p></article></div></div></section>
-<section class="section" id="masters"><div class="wrap"><div class="cta"><div><h2>Вы специалист? Работайте с XizmatGo</h2><p>Создайте профиль и получайте заявки от клиентов.</p></div><button class="btn" id="openMaster">Стать специалистом →</button></div></div></section></main>
-<footer><div class="wrap foot"><div><a class="brand" href="#" style="color:white"><span class="logo">X</span><span style="color:white">XizmatGo</span></a><p>Сервис поиска услуг и специалистов. Помогаем клиентам и мастерам находить друг друга.</p></div><div><a href="#categories">Каталог услуг</a><a href="#how">Как это работает</a><a href="#masters">Специалистам</a><p>© <span id="year"></span> XizmatGo</p></div></div></footer>
-<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="dialog"><div class="dialog-head"><h2 id="modalTitle">Оставить заявку</h2><button class="close" id="closeModal" aria-label="Закрыть">×</button></div><form id="leadForm"><div class="field"><label for="leadName">Ваше имя</label><input id="leadName" name="name" required maxlength="80" placeholder="Как к вам обращаться"></div><div class="field"><label for="leadPhone">Номер телефона</label><input id="leadPhone" name="phone" type="tel" required placeholder="+998 90 123 45 67"></div><div class="field" id="categoryField"><label for="leadCategory">Какая услуга нужна?</label><select id="leadCategory" name="category"></select></div><div class="field" id="descriptionField"><label for="leadDescription">Опишите задачу</label><textarea id="leadDescription" name="description" placeholder="Что нужно сделать, адрес/район, удобное время"></textarea></div><div class="field" id="masterField" hidden><label for="masterSkill">Ваша специализация</label><input id="masterSkill" name="skill" placeholder="Например, электрик"></div><p class="notice">Заявка будет сохранена в системе. Вход в аккаунт и подтверждение телефона добавим отдельным этапом.</p><button class="btn" type="submit" style="width:100%">Продолжить</button></form></div></div><div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
-const SUPABASE_URL="https://laqnpivpztmckykpnvyh.supabase.co";
-const SUPABASE_KEY="sb_publishable_TJ6-IdCUhrBvYcEfDPlwzw_bwlojlfC";
-const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-// Авторизация отложена до отдельного этапа. Формы доступны без входа.
-const categories=[["🔧","Сантехника","Трубы, смесители, ремонт"],["⚡","Электрика","Проводка, розетки, свет"],["🛠️","Ремонт и строительство","Отделка, сборка, монтаж"],["🧹","Уборка","Дом, квартира и офис"],["💇","Красота и уход","Парикмахеры, ногти, макияж"],["🚚","Перевозки","Переезды и доставка"],["📚","Обучение","Репетиторы и занятия"],["✨","Другие услуги","Помощь на каждый день"]];
-const grid=document.querySelector("#categoryGrid"),select=document.querySelector("#leadCategory"),modal=document.querySelector("#modal"),toast=document.querySelector("#toast");let masterMode=false;
-const categoryPhotos={
-"Сантехника":"https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=80",
-"Электрика":"https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80",
-"Ремонт и строительство":"https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
-"Уборка":"https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80",
-"Красота и уход":"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80",
-"Перевозки":"https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=80",
-"Обучение":"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-"Другие услуги":"https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
-};
-categories.forEach(([icon,name,desc])=>{const b=document.createElement("button");b.className="cat";b.setAttribute("aria-label","Выбрать услугу: "+name);const img=document.createElement("img");img.className="cat-photo";img.src=categoryPhotos[name];img.alt=name;img.loading="lazy";img.decoding="async";img.onerror=()=>{img.style.display="none"};b.appendChild(img);const ico=document.createElement("span");ico.className="cat-icon";ico.textContent=icon;b.appendChild(ico);const title=document.createElement("b");title.textContent=name;b.appendChild(title);const detail=document.createElement("small");detail.textContent=desc;b.appendChild(detail);b.addEventListener("click",()=>openModal(false,name));grid.appendChild(b);const o=document.createElement("option");o.value=name;o.textContent=name;select.appendChild(o)});
-function openModal(master=false,category=""){masterMode=master;document.querySelector("#modalTitle").textContent=master?"Стать специалистом":"Оставить заявку";document.querySelector("#masterField").hidden=!master;document.querySelector("#masterSkill").required=master;document.querySelector("#categoryField").hidden=master;document.querySelector("#descriptionField").hidden=master;document.querySelector("#leadForm").reset();if(category)select.value=category;modal.classList.add("open");document.querySelector("#leadName").focus()}
-function closeModal(){modal.classList.remove("open")}
-document.querySelectorAll(".go-service").forEach(button=>button.addEventListener("click",()=>openModal(false,button.dataset.category)));document.querySelector("#openRequest").onclick=()=>openModal(false);document.querySelector("#openMaster").onclick=()=>{window.location.href="./specialist.html"};document.querySelector("#catalogRequest").onclick=()=>openModal(false);document.querySelector("#closeModal").onclick=closeModal;modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-document.querySelector("#searchBtn").onclick=()=>{const q=document.querySelector("#search").value.trim().toLowerCase();const found=categories.find(c=>c.join(" ").toLowerCase().includes(q));if(!q){document.querySelector("#categories").scrollIntoView({behavior:"smooth"});return}if(found){openModal(false,found[1])}else{openModal(false);document.querySelector("#leadDescription").value="Интересует услуга: "+document.querySelector("#search").value}};
-document.querySelector("#search").addEventListener("keydown",e=>{if(e.key==="Enter")document.querySelector("#searchBtn").click()});
-document.querySelector("#leadForm").addEventListener("submit",async e=>{e.preventDefault();const form=e.currentTarget;const submitButton=form.querySelector('button[type="submit"]');const data=Object.fromEntries(new FormData(form));submitButton.disabled=true;submitButton.textContent="Отправляем…";try{if(masterMode){const {error}=await supabaseClient.from("specialist_applications").insert({full_name:data.name.trim(),phone:data.phone.trim(),city:"Ташкент",skill:data.skill.trim(),status:"pending"});if(error)throw error;closeModal();toast.textContent="Заявка специалиста отправлена. Мы свяжемся с вами."; }else{const {data:{session}}=await supabaseClient.auth.getSession();let categoryId=null;if(data.category){const {data:cat,error:catError}=await supabaseClient.from("categories").select("id").eq("name",data.category).maybeSingle();if(catError)throw catError;categoryId=cat?.id||null;}const {error}=await supabaseClient.from("service_requests").insert({customer_id:session?.user?.id||null,category_id:categoryId,customer_name:data.name.trim(),customer_phone:data.phone.trim(),city:"Ташкент",description:(data.description||("Нужна услуга: "+data.category)).trim(),status:"new"});if(error)throw error;closeModal();toast.textContent="Заявка отправлена! Скоро с вами свяжутся.";}toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),4000);}catch(error){toast.textContent="Не удалось отправить: "+(error?.message||"попробуйте позже");toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),5000);}finally{submitButton.disabled=false;submitButton.textContent="Продолжить";}});
-document.querySelector("#year").textContent=new Date().getFullYear();
-</script></body></html>
+<section class="section" id="services"><div class="wrap"><div class="section-head"><div class="eyebrow">Услуги</div><h2>Помощь для дома и на каждый день</h2><p class="lead">Выберите подходящее направление и перейдите к оформлению заявки в сервисе.</p></div>
+<div class="services">
+<a class="service" href="./customer.html"><span class="emoji">🔧</span><h3>Сантехника</h3><p>Смесители, трубы, протечки и установка оборудования.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">⚡</span><h3>Электрика</h3><p>Розетки, освещение, проводка и электромонтаж.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">🛠️</span><h3>Ремонт и монтаж</h3><p>Мелкий ремонт, сборка мебели и монтажные работы.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">🧹</span><h3>Уборка</h3><p>Уборка квартир, домов и рабочих помещений.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">💇</span><h3>Красота и уход</h3><p>Услуги мастеров красоты и личного ухода.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">🚚</span><h3>Перевозки</h3><p>Помощь с переездом, доставкой и перевозкой вещей.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">📚</span><h3>Обучение</h3><p>Репетиторы, индивидуальные занятия и консультации.</p></a>
+<a class="service" href="./customer.html"><span class="emoji">✦</span><h3>Другие услуги</h3><p>Найдите помощь для других повседневных задач.</p></a>
+</div></div></section>
+<section class="section soft" id="how"><div class="wrap"><div class="section-head"><div class="eyebrow">Как это работает</div><h2>Три шага до нужного специалиста</h2><p class="lead">Понятный процесс без лишних действий.</p></div>
+<div class="steps"><article class="step"><div class="number">1</div><h3>Опишите задачу</h3><p>Выберите категорию, укажите адрес и расскажите, какая помощь вам нужна.</p></article><article class="step"><div class="number">2</div><h3>Сравните отклики</h3><p>Получите предложения специалистов и обсудите детали заказа.</p></article><article class="step"><div class="number">3</div><h3>Согласуйте работу</h3><p>Уточните цену и время приезда с выбранным мастером до начала работ.</p></article></div></div></section>
+<section class="section" id="specialists"><div class="wrap"><div class="partner"><div><div class="eyebrow" style="color:#d5f45b">Для специалистов</div><h2>Находите клиентов с XizmatGo</h2><p>Создайте анкету специалиста, укажите свои навыки и рассматривайте заявки клиентов.</p></div><a class="btn" href="./specialist.html">Стать специалистом →</a></div></div></section>
+</main>
+<footer class="footer"><div class="wrap foot"><div><a class="brand" href="./"><span class="logo">X</span><span>XizmatGo</span></a><p>Информационный сайт сервиса XizmatGo. Помогаем клиентам находить специалистов для бытовых и повседневных задач.</p><p>© <span id="year"></span> XizmatGo</p></div><nav class="foot-links" aria-label="Ссылки"><a href="#services">Каталог услуг</a><a href="#how">Как это работает</a><a href="./customer.html">Клиентам</a><a href="./specialist.html">Специалистам</a></nav></div></footer>
+<script>document.querySelector("#year").textContent=new Date().getFullYear();</script>
+</body></html>

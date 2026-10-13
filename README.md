@@ -33,14 +33,22 @@ python -m http.server 8080
 Регистрация из админ-панели отключена. Войти может только существующий пользователь Supabase, у которого в `public.profiles` назначена роль `admin` и `is_active = true`.
 
 1. Создайте пользователя в Supabase Authentication (email/password).
-2. Убедитесь, что для пользователя создана запись в `public.profiles` с тем же UUID, что и `auth.users.id`.
-3. Назначьте роль администратора только доверенному аккаунту:
+2. Назначьте роль администратора только доверенному аккаунту, подставив его email вместо `YOUR_ADMIN_EMAIL`:
 
 ```sql
-update public.profiles
-set role = 'admin', is_active = true
-where id = 'UUID_ПОЛЬЗОВАТЕЛЯ';
+insert into public.profiles (id, full_name, role, is_active)
+select id,
+       coalesce(raw_user_meta_data ->> 'full_name', split_part(email, '@', 1)),
+       'admin'::public.account_role,
+       true
+from auth.users
+where lower(email) = lower('YOUR_ADMIN_EMAIL')
+on conflict (id) do update
+set role = 'admin'::public.account_role,
+    is_active = true;
 ```
+
+Перед запуском проверьте, что email принадлежит именно вашему аккаунту. Если запрос добавил/обновил 0 строк, сначала создайте пользователя в Supabase Authentication.
 
 Не передавайте пароль и не вставляйте service-role/secret key в HTML или GitHub. Административные права проверяются на стороне базы через RLS, а не только скрытием интерфейса.
 

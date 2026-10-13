@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14201e"><meta name="description" content="XizmatGo — приложение для поиска и вызова домашних мастеров.">
+<title>XizmatGo — приложение</title><link rel="icon" href="public/app-icon.svg"><link rel="manifest" href="app.webmanifest">
+<style>
+:root{color-scheme:light;--ink:#17211d;--muted:#68746d;--line:#e5e9e4;--bg:#f4f6f2;--lime:#c8f135;--forest:#14201e;--blue:#315efb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(920px,calc(100% - 28px));margin:auto}.top{padding:18px 0}.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900;letter-spacing:-.7px}.logo{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:var(--lime);color:var(--forest);font-weight:950}.status{font-size:12px;color:var(--muted)}.hero{background:var(--forest);color:white;border-radius:26px;padding:clamp(26px,6vw,54px);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-100px;border-radius:50%;border:42px solid #c8f13520}.eyebrow{color:var(--lime);font-size:12px;font-weight:850;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font-size:clamp(36px,7vw,62px);line-height:.98;letter-spacing:-2.5px;max-width:650px;margin:17px 0}.hero p{font-size:16px;line-height:1.65;color:#d8e0da;max-width:580px;margin:0}.section-title{font-size:24px;letter-spacing:-.8px;margin:30px 0 8px}.section-note{font-size:14px;color:var(--muted);line-height:1.6;margin:0 0 17px}.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:26px}.role{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;min-height:220px;box-shadow:0 8px 24px #17211d06}.role-icon{height:48px;width:48px;border-radius:15px;display:grid;place-items:center;background:#eff5df;font-size:23px}.role h3{font-size:21px;margin:17px 0 7px}.role p{font-size:14px;color:var(--muted);line-height:1.55;margin:0 0 22px}.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:13px 16px;background:var(--lime);color:var(--forest);font-size:14px;font-weight:850;border:0}.btn.dark{background:var(--forest);color:#fff}.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.session{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin:18px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.session strong{display:block;margin-bottom:4px}.session p{margin:0;font-size:13px;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}.notice{font-size:13px;color:var(--muted);line-height:1.6;padding:14px 0 28px}footer{padding:16px 0 28px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer a{text-decoration:underline}
+@media(max-width:620px){.roles{grid-template-columns:1fr}.role{min-height:0;padding:21px}.hero{border-radius:21px}.hero h1{letter-spacing:-1.7px}.top{padding:13px 0}.section-title{margin-top:25px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px"><a class="brand" href="./app.html"><span class="logo">X</span><span>XizmatGo</span></a><span class="status" id="connection">Подключаем приложение…</span></div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">Приложение XizmatGo</div><h1>Мастер для вашей задачи — в одном приложении</h1><p>Создавайте заявки на бытовые услуги, получайте предложения специалистов и договаривайтесь о работе в одном месте.</p></section>
+<div id="session" class="session" hidden><div><strong id="session-title">Вы вошли в XizmatGo</strong><p id="session-subtitle">Выберите, куда перейти.</p></div><div class="actions"><a id="continue" class="btn" href="customer.html">Продолжить →</a><button id="signout" class="btn ghost" type="button">Выйти</button></div></div>
+<h2 class="section-title">Как вы хотите использовать XizmatGo?</h2><p class="section-note">Выберите режим. Ваши заявки, отклики и сообщения сохраняются в аккаунте.</p>
+<section class="roles">
+<article class="role"><span class="role-icon">🛠️</span><h3>Мне нужен мастер</h3><p>Опишите задачу, укажите адрес, сравните предложения и выберите специалиста.</p><a class="btn" href="customer.html">Продолжить как клиент →</a></article>
+<article class="role"><span class="role-icon">🧰</span><h3>Я специалист</h3><p>Заполните анкету, находите подходящие заявки, отправляйте предложения и общайтесь с клиентами.</p><a class="btn dark" href="specialist.html">Продолжить как мастер →</a></article>
+</section>
+<p class="notice">Это отдельный вход в программу XizmatGo. Информационный сайт предназначен для знакомства с проектом; заявки и рабочие процессы выполняются в приложении.</p>
+<footer><span>© <span id="year"></span> XizmatGo</span><span><a href="privacy.html">Конфиденциальность</a> · <a href="terms.html">Условия использования</a></span></footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://laqnpivpztmckykpnvyh.supabase.co";
+const SUPABASE_KEY="sb_publishable_TJ6-IdCUhrBvYcEfDPlwzw_bwlojlfC";
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const $=id=>document.getElementById(id);
+$("year").textContent=new Date().getFullYear();
+async function loadSession(){
+ try{
+  const {data:{session},error}=await db.auth.getSession();
+  if(error) throw error;
+  $("connection").textContent="Сервис доступен";
+  if(!session){$("session").hidden=true;return}
+  const {data:profile}=await db.from("profiles").select("full_name,role,is_active").eq("id",session.user.id).maybeSingle();
+  $("session").hidden=false;
+  const name=profile?.full_name||session.user.email||"Пользователь XizmatGo";
+  $("session-title").textContent="Здравствуйте, "+name;
+  let href="customer.html",role="клиент";
+  if(profile?.role==="specialist"){href="specialist.html";role="специалист"}
+  if(profile?.role==="admin"){href="admin.html";role="администратор"}
+  $("session-subtitle").textContent="Вы вошли как "+role+". Можно продолжить работу.";
+  $("continue").href=href;
+  if(profile?.is_active===false){$("session-subtitle").textContent="Аккаунт временно отключён. Обратитесь к администратору.";$("continue").hidden=true}
+ }catch(e){$("connection").textContent="Проверьте подключение";console.error(e)}
+}
+$("signout").addEventListener("click",async()=>{const {error}=await db.auth.signOut();if(error){alert("Не удалось выйти: "+error.message);return}location.reload()});
+db.auth.onAuthStateChange(()=>{loadSession()});
+loadSession();
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+</script>
+</body></html>

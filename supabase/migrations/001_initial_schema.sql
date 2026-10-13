@@ -73,6 +73,8 @@ create index specialist_services_specialist_idx on public.specialist_services(sp
 create index service_requests_customer_idx on public.service_requests(customer_id, created_at desc);
 create index service_requests_specialist_idx on public.service_requests(specialist_id, created_at desc);
 create index reviews_specialist_idx on public.reviews(specialist_id);
+create index reviews_customer_id_idx on public.reviews(customer_id);
+create index service_requests_category_id_idx on public.service_requests(category_id);
 
 alter table public.profiles enable row level security;
 alter table public.categories enable row level security;
@@ -80,12 +82,10 @@ alter table public.specialist_services enable row level security;
 alter table public.service_requests enable row level security;
 alter table public.reviews enable row level security;
 
-create policy "Profiles are visible to signed-in users" on public.profiles
-  for select to authenticated using (true);
-create policy "Users create their own profile" on public.profiles
-  for insert to authenticated with check (auth.uid() = id);
-create policy "Users update their own profile" on public.profiles
-  for update to authenticated using (auth.uid() = id) with check (auth.uid() = id);
+create policy "Users can read their own profile" on public.profiles
+  for select to authenticated using ((select auth.uid()) = id);
+create policy "Users update their editable profile fields" on public.profiles
+  for update to authenticated using ((select auth.uid()) = id) with check ((select auth.uid()) = id);
 
 create policy "Active categories are public" on public.categories
   for select to anon, authenticated using (is_active);
@@ -93,24 +93,51 @@ create policy "Active categories are public" on public.categories
 create policy "Active specialist services are public" on public.specialist_services
   for select to anon, authenticated using (is_active);
 create policy "Specialists create their own services" on public.specialist_services
-  for insert to authenticated with check (auth.uid() = specialist_id);
+  for insert to authenticated with check (
+    (select auth.uid()) = specialist_id and exists (
+      select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'specialist' and p.is_active
+    )
+  );
 create policy "Specialists update their own services" on public.specialist_services
-  for update to authenticated using (auth.uid() = specialist_id) with check (auth.uid() = specialist_id);
+  for update to authenticated using ((select auth.uid()) = specialist_id)
+  with check (
+    (select auth.uid()) = specialist_id and exists (
+      select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'specialist' and p.is_active
+    )
+  );
 create policy "Specialists delete their own services" on public.specialist_services
-  for delete to authenticated using (auth.uid() = specialist_id);
+  for delete to authenticated using ((select auth.uid()) = specialist_id);
 
-create policy "Customers see their requests and specialists see assigned requests" on public.service_requests
-  for select to authenticated using (auth.uid() = customer_id or auth.uid() = specialist_id);
+create policy "Customers see their own requests" on public.service_requests
+  for select to authenticated using ((select auth.uid()) = customer_id);
+create policy "Assigned specialists see requests" on public.service_requests
+  for select to authenticated using ((select auth.uid()) = specialist_id);
 create policy "Customers create requests for themselves" on public.service_requests
-  for insert to authenticated with check (customer_id = auth.uid());
-create policy "Request participants can update requests" on public.service_requests
-  for update to authenticated using (auth.uid() = customer_id or auth.uid() = specialist_id)
-  with check (auth.uid() = customer_id or auth.uid() = specialist_id);
+  for insert to authenticated with check (
+    customer_id = (select auth.uid()) and status = 'new' and specialist_id is null
+  );
 
 create policy "Reviews are public" on public.reviews
   for select to anon, authenticated using (true);
-create policy "Customers create reviews for themselves" on public.reviews
-  for insert to authenticated with check (auth.uid() = customer_id);
+create policy "Customers review only completed jobs they requested" on public.reviews
+  for insert to authenticated with check (
+    customer_id = (select auth.uid())
+    and exists (
+      select 1 from public.service_requests r
+      where r.id = request_id
+        and r.customer_id = (select auth.uid())
+        and r.specialist_id = reviews.specialist_id
+        and r.status = 'completed'
+    )
+  );
+
+grant usage on schema public to anon, authenticated;
+grant select on public.categories, public.specialist_services, public.reviews to anon, authenticated;
+grant select on public.profiles to authenticated;
+grant update (full_name, phone, city, avatar_url, bio, updated_at) on public.profiles to authenticated;
+grant select, insert on public.service_requests to authenticated;
+grant insert, update, delete on public.specialist_services to authenticated;
+grant insert on public.reviews to authenticated;
 
 insert into public.categories(name,slug,icon,description,sort_order) values
  ('Сантехника','santehnika','🔧','Трубы, смесители и ремонт',1),
@@ -141,6 +168,8 @@ begin
   return new;
 end;
 $$;
+
+revoke all on function public.handle_new_user() from public, anon, authenticated;
 
 create trigger on_auth_user_created
   after insert on auth.users

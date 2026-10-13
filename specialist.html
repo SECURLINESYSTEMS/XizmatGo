@@ -105,7 +105,8 @@ async function loadBids(){
  box.querySelectorAll("[data-open-chat]").forEach(b=>b.addEventListener("click",async()=>{showTab("chats");await loadChats();const target=(window._chats||[]).find(c=>c.request_id===b.dataset.openChat);if(target)await openChat(target.id)}));
  box.querySelectorAll(".arrival-verify").forEach(form=>form.addEventListener("submit",verifyArrival));
  box.querySelectorAll(".quote-submit").forEach(form=>form.addEventListener("submit",submitQuote));
- box.querySelectorAll(".complete-work-form").forEach(form=>form.addEventListener("submit",completeWork));\n box.querySelectorAll("[data-edit-quote]").forEach(button=>button.addEventListener("click",()=>{quoteEditRequests.add(button.dataset.editQuote);showTab("bids");loadBids()}));
+ box.querySelectorAll(".complete-work-form").forEach(form=>form.addEventListener("submit",completeWork));
+ box.querySelectorAll("[data-edit-quote]").forEach(button=>button.addEventListener("click",()=>{quoteEditRequests.add(button.dataset.editQuote);showTab("bids");loadBids()}));
  box.querySelectorAll(".quote-submit input").forEach(input=>input.addEventListener("input",()=>{const form=input.closest("form");const total=["trip_fee","labor_cost","materials_cost"].reduce((sum,key)=>sum+Math.max(0,Number(form.elements[key]?.value)||0),0);form.querySelector("[data-quote-total]").textContent=Math.round(total).toLocaleString("ru-RU")+" сум"}));
 }
 async function verifyArrival(e){

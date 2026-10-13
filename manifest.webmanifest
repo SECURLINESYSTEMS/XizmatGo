@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "XizmatGo — вызов мастера",
+  "short_name": "XizmatGo",
+  "description": "Заказывайте услуги и находите мастеров в Узбекистане.",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#14201E",
+  "theme_color": "#14201E",
+  "categories": ["lifestyle", "utilities"],
+  "icons": [
+    {"src": "./public/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}

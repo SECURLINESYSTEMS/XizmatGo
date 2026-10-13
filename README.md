@@ -17,7 +17,9 @@
 
 ## Ссылки
 
-- Главная: `index.html`
+- Информационный сайт: `index.html`
+- Вход в программу: `app.html`
+- PWA-манифест программы: `app.webmanifest`
 - Панель управления: `admin.html`
 - Supabase project ref: `laqnpivpztmckykpnvyh`
 

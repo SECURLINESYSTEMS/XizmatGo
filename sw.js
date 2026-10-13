@@ -1,13 +1,14 @@
 /* XizmatGo offline shell. Supabase/API requests are intentionally never cached. */
-const CACHE_NAME = "xizmatgo-shell-v1";
+const CACHE_NAME = "xizmatgo-shell-v2";
 const SHELL = [
   "./",
   "./index.html",
+  "./app.html",
   "./customer.html",
   "./specialist.html",
   "./public/favicon.svg",
   "./public/app-icon.svg",
-  "./manifest.webmanifest"
+  "./app.webmanifest"
 ];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -24,7 +25,7 @@ self.addEventListener("fetch", event => {
     event.respondWith(fetch(request).then(response => {
       if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
       return response;
-    }).catch(async () => (await caches.match(request)) || (await caches.match("./index.html"))));
+    }).catch(async () => (await caches.match(request)) || (await caches.match(url.pathname.endsWith("/app.html") ? "./app.html" : "./index.html"))));
     return;
   }
   event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {

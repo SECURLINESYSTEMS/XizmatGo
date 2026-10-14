@@ -1,5 +1,5 @@
 /* XizmatGo offline shell. Supabase/API requests are intentionally never cached. */
-const CACHE_NAME = "xizmatgo-shell-v2";
+const CACHE_NAME = "xizmatgo-shell-v3";
 const SHELL = [
   "./",
   "./index.html",
@@ -8,7 +8,10 @@ const SHELL = [
   "./specialist.html",
   "./public/favicon.svg",
   "./public/app-icon.svg",
-  "./app.webmanifest"
+  "./app.webmanifest",
+  "./privacy.html",
+  "./terms.html",
+  "./disclaimer.html"
 ];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
